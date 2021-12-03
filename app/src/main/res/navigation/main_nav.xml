@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/fragment1">
+
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="com.nexoslav.testsharedviewmodelinsideviewmodel.feature1.Fragment1"
+        android:label="fragment_1"
+        tools:layout="@layout/fragment_1" >
+        <action
+            android:id="@+id/action_fragment1_to_navigation"
+            app:destination="@id/navigation" />
+    </fragment>
+
+    <navigation
+        android:id="@+id/navigation"
+        app:startDestination="@id/fragment2">
+        <fragment
+            android:id="@+id/fragment3"
+            android:name="com.nexoslav.testsharedviewmodelinsideviewmodel.feature2.fragment3.Fragment3"
+            android:label="fragment_3"
+            tools:layout="@layout/fragment_3" />
+        <fragment
+            android:id="@+id/fragment2"
+            android:name="com.nexoslav.testsharedviewmodelinsideviewmodel.feature2.fragment2.Fragment2"
+            android:label="fragment_2"
+            tools:layout="@layout/fragment_2" >
+            <action
+                android:id="@+id/action_fragment2_to_fragment3"
+                app:destination="@id/fragment3" />
+        </fragment>
+    </navigation>
+
+</navigation>
